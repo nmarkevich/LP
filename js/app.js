@@ -1,3 +1,15 @@
+const menuItems=document.querySelectorAll('.landing__container');
+const navBarList=document.querySelector('#navbar__list');
+
+for (const menuitem of menuItems) {
+    const itemText=menuitem.querySelector('h2').textContent;
+    const listItem=document.createElement('li');
+    listItem.textContent=itemText;
+    navBarList.appendChild(listItem);
+}
+
+console.log(navBarList);
+
 /**
  * 
  * Manipulating the DOM exercise.
