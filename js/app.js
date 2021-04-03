@@ -4,13 +4,16 @@ let i=1;
 
 for (const menuitem of menuItems) {
     let idtext='sectionid'+i;
+    menuitem.setAttribute('id', idtext);
     const itemText=menuitem.querySelector('h2').textContent;
     const listItem=document.createElement('li');
-    listItem.textContent=itemText;
+    const listlink=document.createElement('a');
+    listlink.textContent=itemText;
+    listlink.setAttribute('href', '#'+idtext);
+    listItem.appendChild(listlink);
     navBarList.appendChild(listItem);
-    menuitem.setAttribute('id', idtext);
     i++;
-    console.log(menuitem);
+    console.log(navBarList);
 }
 
 
