@@ -1,14 +1,19 @@
 const menuItems=document.querySelectorAll('.landing__container');
 const navBarList=document.querySelector('#navbar__list');
+let i=1;
 
 for (const menuitem of menuItems) {
+    let idtext='sectionid'+i;
     const itemText=menuitem.querySelector('h2').textContent;
     const listItem=document.createElement('li');
     listItem.textContent=itemText;
     navBarList.appendChild(listItem);
+    menuitem.setAttribute('id', idtext);
+    i++;
+    console.log(menuitem);
 }
 
-console.log(navBarList);
+
 
 /**
  * 
