@@ -1,22 +1,14 @@
-const menuItems=document.querySelectorAll('.landing__container');
+const menuItems=document.querySelectorAll('section');
 const navBarList=document.querySelector('#navbar__list');
-let i=1;
 
-for (const menuitem of menuItems) {
-    let idtext='sectionid'+i;
-    menuitem.setAttribute('id', idtext);
-    const itemText=menuitem.querySelector('h2').textContent;
+for(const menuItem of menuItems){
     const listItem=document.createElement('li');
-    const listlink=document.createElement('a');
-    listlink.textContent=itemText;
-    listlink.setAttribute('href', '#'+idtext);
-    listItem.appendChild(listlink);
+    const listLink=document.createElement('a');
+    listLink.textContent=menuItem.getAttribute('data-nav');
+    listLink.setAttribute('href', '#'+menuItem.getAttribute('id'));
+    listItem.appendChild(listLink);
     navBarList.appendChild(listItem);
-    i++;
-    console.log(navBarList);
 }
-
-
 
 /**
  * 
