@@ -11,6 +11,9 @@ for(const menuItem of menuItems){
     menuItem.addEventListener("click" , ( ) => {
         menuItem.classList.toggle('your-active-class');
    });
+   listLink.addEventListener("click" , ( ) => {
+    menuItem.setAttribute('class','your-active-class');
+});
 }
 
 /**
