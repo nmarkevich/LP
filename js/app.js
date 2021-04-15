@@ -10,6 +10,15 @@ for(const menuItem of menuItems){
     navBarList.appendChild(listItem);
 }
 
+const sectionItems=document.querySelectorAll('section');
+
+for (const sItem of sectionItems) {
+    let sectionClass=sItem.className;
+    sItem.addEventListener("click" , ( ) => {
+         sItem.classList.toggle('your-active-class');
+    });
+}
+
 /**
  * 
  * Manipulating the DOM exercise.
