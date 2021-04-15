@@ -8,15 +8,9 @@ for(const menuItem of menuItems){
     listLink.setAttribute('href', '#'+menuItem.getAttribute('id'));
     listItem.appendChild(listLink);
     navBarList.appendChild(listItem);
-}
-
-const sectionItems=document.querySelectorAll('section');
-
-for (const sItem of sectionItems) {
-    let sectionClass=sItem.className;
-    sItem.addEventListener("click" , ( ) => {
-         sItem.classList.toggle('your-active-class');
-    });
+    menuItem.addEventListener("click" , ( ) => {
+        menuItem.classList.toggle('your-active-class');
+   });
 }
 
 /**
