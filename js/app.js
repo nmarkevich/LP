@@ -15,6 +15,14 @@ for(const menuItem of menuItems){
    listLink.addEventListener("click" , ( ) => {
     menuItem.setAttribute('class','your-active-class');
 });
+
+    window.addEventListener('scroll', () => {
+        navBarList.style.display = 'block';
+        setTimeout(() => {
+            navBarList.style.display = 'none';
+    }, 3000);
+});
+
 }
 
 /**
