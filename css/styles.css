@@ -36,6 +36,9 @@ ul li a {
     text-decoration: none;
 }
 
+.active {
+    background-color: aquamarine;
+}
 
 /* Typeography General*/
 h1 {

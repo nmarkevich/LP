@@ -10,6 +10,7 @@ for(const menuItem of menuItems){
     navBarList.appendChild(listItem);
     menuItem.addEventListener("click" , ( ) => {
         menuItem.classList.toggle('your-active-class');
+        listItem.setAttribute('class', 'active');
    });
    listLink.addEventListener("click" , ( ) => {
     menuItem.setAttribute('class','your-active-class');
