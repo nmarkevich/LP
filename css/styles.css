@@ -72,6 +72,18 @@ main {
     margin: 10vh 1em 10vh;
 }
 
+.button__panel {
+    display: flex;
+    justify-content: center;
+} 
+
+button {
+    display: inline-block;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px;
+}
+
 .main-hero {
     min-height: 40vh;
     padding-top: 3em;
@@ -79,7 +91,6 @@ main {
 
 section {
     position: relative;
-    /*min-height: 80vh;*/
 }
 
 
