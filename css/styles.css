@@ -22,24 +22,6 @@ body {
     color: #fff;
 }
 
-ul {
-    float: left;
-    list-style: none;
-}
-
-ul li {
-    float: left;
-    margin-left: 20px;
-}
-
-ul li a {
-    text-decoration: none;
-}
-
-.active {
-    background-color: gray;
-}
-
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
@@ -105,12 +87,15 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
+    float: left;
+    list-style: none;
 }
 
 .navbar__menu li {
-    display: inline-block;
+    float: left;
     padding: 10px;
     color:blue;
+    margin-left: 20px;
 }
 
 .navbar__menu .menu__link {
@@ -118,13 +103,17 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color:aqua;
+    color:blue;
 }
 
 .navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
+}
+
+.active {
+    background-color: gray;
 }
 
 /* Header Styles */
