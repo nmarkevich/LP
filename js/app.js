@@ -25,6 +25,22 @@ for(const menuItem of menuItems){
 
 }
 
+const myButton = document.getElementById('buttonToTop');
+
+window.onscroll = () => {
+    console.log(document.documentElement.scrollTop);
+    console.log(document.body.scrollHeight);
+    if (document.documentElement.scrollTop+window.innerHeight+10 >= document.documentElement.scrollHeight) {
+        myButton.style.display = "block";
+    } else {
+        myButton.style.display = "none";
+    }
+};
+
+function topFunction () {
+    document.documentElement.scrollTo(0,0);
+}
+
 /**
  * 
  * Manipulating the DOM exercise.
