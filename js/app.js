@@ -1,3 +1,4 @@
+//Global Variables
 const menuItems = document.querySelectorAll("section");
 const navBarList = document.querySelector("#navbar__list");
 
@@ -12,6 +13,7 @@ for (const menuItem of menuItems) {
     //Making the sections collapsible
     menuItem.addEventListener("click" , ( ) => {
         menuItem.classList.toggle("your-active-class");
+        menuItem.style.backgroundColor = "gray";
         listItem.setAttribute("class", "active");
     });
     //Expand the section when a user navigates to the section through the menu
@@ -31,8 +33,6 @@ const myButton = document.getElementById("buttonToTop");
 
 //Showing 'Go to top' button when a user scrolls to the fold of the page
 window.onscroll = () => {
-    console.log(document.documentElement.scrollTop);
-    console.log(document.body.scrollHeight);
     if (document.documentElement.scrollTop+window.innerHeight+10 >= document.documentElement.scrollHeight) {
         myButton.style.display = "block";
     } else {
@@ -40,7 +40,9 @@ window.onscroll = () => {
     }
 };
 
-//Navigating a user to the top of the page when 'Go to top' button is clicked. 
+//Navigating a user to the top of the page when 'Go to top' button is clicked.
+myButton.addEventListener("click", topFunction);
+
 function topFunction () {
     document.documentElement.scrollTo(0,0);
 }
@@ -60,10 +62,6 @@ function topFunction () {
  * 
 */
 
-/**
- * Define Global Variables
- * 
-*/
 
 
 /**
@@ -100,5 +98,6 @@ function topFunction () {
 // Scroll to section on link click
 
 // Set sections as active
+
 
 
