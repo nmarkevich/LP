@@ -1,33 +1,33 @@
-const menuItems = document.querySelectorAll('section');
-const navBarList = document.querySelector('#navbar__list');
+const menuItems = document.querySelectorAll("section");
+const navBarList = document.querySelector("#navbar__list");
 
 //Navbar menu creation
 for (const menuItem of menuItems) {
-    const listItem = document.createElement('li');
-    const listLink = document.createElement('a');
-    listLink.textContent = menuItem.getAttribute('data-nav');
-    listLink.setAttribute('href', '#' + menuItem.getAttribute('id'));
+    const listItem = document.createElement("li");
+    const listLink = document.createElement("a");
+    listLink.textContent = menuItem.getAttribute("data-nav");
+    listLink.setAttribute("href", "#" + menuItem.getAttribute("id"));
     listItem.appendChild(listLink);
     navBarList.appendChild(listItem);
     //Making the sections collapsible
     menuItem.addEventListener("click" , ( ) => {
-        menuItem.classList.toggle('your-active-class');
-        listItem.setAttribute('class', 'active');
-   });
-   //Expand the section when a user navigates to the section through the menu
-   listLink.addEventListener("click" , ( ) => {
-    menuItem.setAttribute('class','your-active-class');
-});
+        menuItem.classList.toggle("your-active-class");
+        listItem.setAttribute("class", "active");
+    });
+    //Expand the section when a user navigates to the section through the menu
+    listLink.addEventListener("click" , ( ) => {
+        menuItem.setAttribute("class","your-active-class");
+    });
     //Hiding navbar when a user doesn't scroll
-    window.addEventListener('scroll', () => {
-        navBarList.style.display = 'block';
+    window.addEventListener("scroll", () => {
+        navBarList.style.display = "block";
         setTimeout(() => {
-            navBarList.style.display = 'none';
-    }, 3000);
-});
+            navBarList.style.display = "none";
+        }, 3000);
+    });
 }
 
-const myButton = document.getElementById('buttonToTop');
+const myButton = document.getElementById("buttonToTop");
 
 //Showing 'Go to top' button when a user scrolls to the fold of the page
 window.onscroll = () => {
