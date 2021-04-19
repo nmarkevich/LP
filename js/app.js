@@ -21,6 +21,7 @@ for (const menuItem of menuItems) {
     listLink.addEventListener("click" , ( ) => {
         menuItem.setAttribute("class","your-active-class");
         menuItem.style.backgroundColor = "gray";
+        listItem.setAttribute("class", "active");
     });
 }
 
