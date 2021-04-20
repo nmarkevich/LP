@@ -93,14 +93,14 @@ section {
 
 .navbar__menu li {
     float: left;
-    padding: 10px;
+    padding: 5px;
     color:blue;
     margin-left: 20px;
 }
 
 .navbar__menu .menu__link {
     display: block;
-    padding: 1em;
+    padding: 5px; 
     font-weight: bold;
     text-decoration: none;
     color:blue;
