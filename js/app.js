@@ -1,8 +1,8 @@
 //Global Variables
-const menuItems = document.querySelectorAll("section");
+const sectionItems = document.querySelectorAll("section");
 const navBarList = document.querySelector("#navbar__list");
 
-for (const menuItem of menuItems) {
+for (const menuItem of sectionItems) {
     //Navbar menu creation
     const listItem = document.createElement("li");
     const listLink = document.createElement("a");
@@ -13,16 +13,16 @@ for (const menuItem of menuItems) {
     navBarList.appendChild(listItem);
     //Making the sections collapsible
     menuItem.addEventListener("click" , ( ) => {
-        menuItem.classList.toggle("your-active-class");
-        menuItem.style.backgroundColor = "gray";
-        listItem.setAttribute("class", "active");
+        menuItem.classList.toggle("collapsible");
+        /*menuItem.style.backgroundColor = "gray";
+        listItem.setAttribute("class", "active");*/
     });
-    //Expand the section when a user navigates to the section through the menu
+    /*//Expand the section when a user navigates to the section through the menu
     listLink.addEventListener("click" , ( ) => {
         menuItem.setAttribute("class","your-active-class");
         menuItem.style.backgroundColor = "gray";
         listItem.setAttribute("class", "active");
-    });
+    });*/
 }
 
 //Hiding navbar when a user doesn't scroll
@@ -51,5 +51,16 @@ function topFunction () {
     document.documentElement.scrollTo(0,0);
 }
 
-
+window.addEventListener("scroll", () => {
+    //Making section active when it's in the viewport
+    for (const sectionItem of sectionItems) {
+        console.log(sectionItem.getBoundingClientRect().top);
+        console.log(window.innerHeight);
+        if (sectionItem.getBoundingClientRect().top < window.innerHeight && sectionItem.getBoundingClientRect().top > 0) {
+            sectionItem.classList.add("your-active-class");
+        } else {
+            sectionItem.classList.remove("your-active-class");
+        }
+    }
+});
 

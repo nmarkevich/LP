@@ -112,10 +112,6 @@ section {
     transition: ease 0.3s all;
 }
 
-.active {
-    background-color: gray;
-}
-
 /* Header Styles */
 .page__header {
     background: #fff;
@@ -148,7 +144,7 @@ section {
     display: none;
 }
 
-section.your-active-class .container__text {
+section.collapsible .container__text {
     display: block;
 }
 
@@ -231,7 +227,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 50%); */
     display: block;
 }
 
