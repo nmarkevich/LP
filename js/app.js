@@ -9,6 +9,7 @@ for (const menuItem of sectionItems) {
     listLink.textContent = menuItem.getAttribute("data-nav");
     listLink.setAttribute("href", "#" + menuItem.getAttribute("id"));
     listLink.setAttribute("class", "menu__link");
+    listLink.setAttribute("data-nav", menuItem.getAttribute("data-nav"));
     listItem.appendChild(listLink);
     navBarList.appendChild(listItem);
     //Making the sections collapsible
@@ -30,7 +31,7 @@ window.addEventListener("scroll", () => {
     navBarList.style.display = "block";
     setTimeout(() => {
         navBarList.style.display = "none";
-    }, 3000);
+    }, 5000);
 });
 
 const myButton = document.getElementById("buttonToTop");
@@ -54,12 +55,14 @@ function topFunction () {
 window.addEventListener("scroll", () => {
     //Making section active when it's in the viewport
     for (const sectionItem of sectionItems) {
-        console.log(sectionItem.getBoundingClientRect().top);
-        console.log(window.innerHeight);
+        const datanav = sectionItem.getAttribute("data-nav");
+        const menuItem = document.querySelector(".menu__link[data-nav='"+datanav+"']");
         if (sectionItem.getBoundingClientRect().top < window.innerHeight && sectionItem.getBoundingClientRect().top > 0) {
             sectionItem.classList.add("your-active-class");
+            menuItem.classList.add("active");
         } else {
             sectionItem.classList.remove("your-active-class");
+            menuItem.classList.remove("active");
         }
     }
 });
